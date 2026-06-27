@@ -259,7 +259,7 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 5rem;
+            margin-bottom: 4rem;
         }
 
         .section-title {
@@ -274,6 +274,44 @@
             text-transform: uppercase;
             letter-spacing: 4px;
             font-weight: 600;
+        }
+
+        /* Novas Classes para Divisão por Linhas */
+        .linha-categoria {
+            margin-bottom: 5rem;
+        }
+
+        .linha-categoria:last-child {
+            margin-bottom: 0;
+        }
+
+        .categoria-title-wrapper {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .categoria-title {
+            display: inline-block;
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--terracota);
+            background-color: var(--bg-bege);
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+            font-style: italic;
+        }
+
+        .categoria-title-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: rgba(179, 112, 99, 0.3);
+            z-index: 1;
         }
 
         .produtos-grid {
@@ -637,6 +675,11 @@
                 font-size: 2.2rem;
             }
 
+            .categoria-title {
+                font-size: 1.8rem;
+                padding: 0 1.2rem;
+            }
+
             .produtos-grid {
                 grid-template-columns: 1fr;
                 max-width: 380px;
@@ -766,53 +809,67 @@
                     <p class="section-subtitle">Doces que fazem bem</p>
                 </div>
 
-                <div class="produtos-grid">
+                <!-- LINHA PROTEICA -->
+                <div class="linha-categoria">
+                    <div class="categoria-title-wrapper">
+                        <h3 class="categoria-title">Linha Proteica</h3>
+                    </div>
                     
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <div class="label-badge-mock">
-                                <span>D</span>
-                                <small>Danícia</small>
+                    <div class="produtos-grid">
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <div class="label-badge-mock">
+                                    <span>D</span>
+                                    <small>Danícia</small>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Gelato Avelate</h3>
+                                <span class="product-benefits">Avelã e Cacau Alcalino</span>
+                                <p class="product-description">Textura extremamente cremosa com sabor intenso de avelã e cacau 100% alcalino. Rico em proteínas e fibras, zero açúcar e zero lactose.</p>
+                                <button class="btn-verde-outline btn-pedir" data-produto="Gelato Avelate">Pedir agora</button>
                             </div>
                         </div>
-                        <div class="product-info">
-                            <h3>Gelato Avelate</h3>
-                            <span class="product-benefits">Avelã e Cacau Alcalino</span>
-                            <p class="product-description">Textura extremamente cremosa com sabor intenso de avelã e cacau 100% alcalino. Rico em proteínas e fibras, zero açúcar e zero lactose.</p>
-                            <button class="btn-verde-outline btn-pedir" data-produto="Gelato Avelate">Pedir agora</button>
-                        </div>
-                    </div>
 
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <div class="label-badge-mock">
-                                <span>D</span>
-                                <small>Danícia</small>
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <div class="label-badge-mock">
+                                    <span>D</span>
+                                    <small>Danícia</small>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Picolé Premium</h3>
+                                <span class="product-benefits">Whey Protein • Casca Crocante</span>
+                                <p class="product-description">A união perfeita de um recheio proteico cremoso com uma cobertura crocante de chocolate saudável. O verdadeiro padrão premium.</p>
+                                <button class="btn-verde-outline btn-pedir" data-produto="Picolé Premium">Pedir agora</button>
                             </div>
                         </div>
-                        <div class="product-info">
-                            <h3>Picolé Premium</h3>
-                            <span class="product-benefits">Whey Protein • Casca Crocante</span>
-                            <p class="product-description">A união perfeita de um recheio proteico cremoso com uma cobertura crocante de chocolate saudável. O verdadeiro padrão premium.</p>
-                            <button class="btn-verde-outline btn-pedir" data-produto="Picolé Premium">Pedir agora</button>
-                        </div>
                     </div>
+                </div>
 
-                    <div class="product-card">
-                        <div class="product-image-container">
-                            <div class="label-badge-mock">
-                                <span>D</span>
-                                <small>Danícia</small>
+                <!-- LINHA CLÁSSICA -->
+                <div class="linha-categoria">
+                    <div class="categoria-title-wrapper">
+                        <h3 class="categoria-title">Linha Clássica</h3>
+                    </div>
+                    
+                    <div class="produtos-grid">
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <div class="label-badge-mock">
+                                    <span>D</span>
+                                    <small>Danícia</small>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Bolo de Pote Saudável</h3>
+                                <span class="product-benefits">100% Natural • Sem Glúten</span>
+                                <p class="product-description">Camadas deliciosas e equilibradas de massa macia e recheio leve. Totalmente livre de trigo, cevada ou centeio.</p>
+                                <button class="btn-verde-outline btn-pedir" data-produto="Bolo de Pote Saudável">Pedir agora</button>
                             </div>
                         </div>
-                        <div class="product-info">
-                            <h3>Bolo de Pote Saudável</h3>
-                            <span class="product-benefits">100% Natural • Sem Glúten</span>
-                            <p class="product-description">Camadas deliciosas e equilibradas de massa macia e recheio leve. Totalmente livre de trigo, cevada ou centeio.</p>
-                            <button class="btn-verde-outline btn-pedir" data-produto="Bolo de Pote Saudável">Pedir agora</button>
-                        </div>
                     </div>
-
                 </div>
 
             </div>
