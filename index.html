@@ -82,6 +82,11 @@
             color: var(--text-claro);
         }
 
+        .section-kraft {
+            background-color: var(--kraft-bg);
+            color: var(--text-marrom);
+        }
+
         /* ==========================================================================
            Cabeçalho (Header) - Fundo Bege
            ========================================================================== */
@@ -109,8 +114,6 @@
             display: block;
             margin: 0 auto;
         }
-
-        
 
         nav ul {
             display: flex;
@@ -221,7 +224,7 @@
             height: 44px;
             margin: 0 auto 1.5rem auto;
             fill: none;
-            stroke: var(--text-claro); /* Ícones brancos/creme no fundo verde */
+            stroke: var(--text-claro);
             stroke-width: 1.2;
             display: block;
         }
@@ -392,6 +395,106 @@
         }
 
         /* ==========================================================================
+           NOVA SEÇÃO: Tabela Nutricional (Acordeão) - INTERCALADO: Fundo Kraft
+           ========================================================================== */
+        .nutricional-section {
+            padding: 7rem 0;
+            border-top: 1px solid rgba(107, 112, 81, 0.1);
+        }
+
+        .accordion-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details.accordion {
+            background: #ffffff;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(107, 112, 81, 0.15);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        details.accordion:hover {
+            box-shadow: 0 4px 15px rgba(62, 54, 51, 0.05);
+        }
+
+        details.accordion summary {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-marrom);
+            list-style: none; /* Remove seta padrão */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        details.accordion summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.accordion summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--terracota);
+            font-weight: 400;
+            transition: var(--transition);
+        }
+
+        details.accordion[open] summary::after {
+            content: '−';
+        }
+
+        details.accordion[open] summary {
+            border-bottom: 1px solid rgba(107, 112, 81, 0.1);
+            background-color: var(--bg-bege);
+        }
+
+        .nutri-content {
+            padding: 2rem;
+            background: #fff;
+        }
+
+        .nutri-info-extra {
+            font-size: 0.85rem;
+            color: var(--verde-oliva);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .nutri-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            color: var(--text-marrom);
+        }
+
+        .nutri-table th, .nutri-table td {
+            border-bottom: 1px solid #eaeaea;
+            padding: 0.8rem 0;
+            text-align: left;
+        }
+
+        .nutri-table th {
+            font-weight: 600;
+            color: var(--text-marrom);
+            width: 70%;
+        }
+
+        .nutri-table td {
+            text-align: right;
+            font-weight: 400;
+        }
+
+        .nutri-table tr:last-child th,
+        .nutri-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ==========================================================================
            Seção Encomendas - INTERCALADO: Fundo Verde Escuro
            ========================================================================== */
         .encomendas-section {
@@ -474,6 +577,7 @@
             justify-content: center;
             gap: 3rem;
             margin-bottom: 2.5rem;
+            flex-wrap: wrap;
         }
 
         .footer-nav a {
@@ -518,6 +622,7 @@
 
             nav ul {
                 gap: 1.8rem;
+                flex-wrap: wrap;
             }
 
             .hero-section {
@@ -555,6 +660,15 @@
                 flex-direction: column;
                 gap: 1.5rem;
             }
+            
+            details.accordion summary {
+                padding: 1.2rem 1.5rem;
+                font-size: 0.95rem;
+            }
+            
+            .nutri-content {
+                padding: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -581,6 +695,7 @@
         <nav>
             <ul>
                 <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#tabela-nutricional">Informação Nutricional</a></li>
                 <li><a href="#valores">Valores</a></li>
                 <li><a href="#encomendas">Encomendas</a></li>
             </ul>
@@ -703,6 +818,152 @@
             </div>
         </section>
 
+        <!-- NOVA SEÇÃO: TABELA NUTRICIONAL (Alvo do QR Code) -->
+        <section id="tabela-nutricional" class="nutricional-section section-kraft">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Tabela Nutricional</h2>
+                    <p class="section-subtitle">Transparência em cada detalhe</p>
+                </div>
+
+                <div class="accordion-container">
+                    
+                    <!-- Produto 1 -->
+                    <details class="accordion">
+                        <summary>Sorvete em Pote - Chocolate Belga</summary>
+                        <div class="nutri-content">
+                            <p class="nutri-info-extra">Porção de 60g (1 bola) - Valor Energético e Nutrientes</p>
+                            <table class="nutri-table">
+                                <tbody>
+                                    <tr>
+                                        <th>Valor Energético</th>
+                                        <td>85 kcal = 357 kJ</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Carboidratos</th>
+                                        <td>12g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Proteínas</th>
+                                        <td>2,5g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Gorduras Totais</th>
+                                        <td>3,0g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Gorduras Saturadas</th>
+                                        <td>1,5g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Gorduras Trans</th>
+                                        <td>0g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Fibra Alimentar</th>
+                                        <td>3,2g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Sódio</th>
+                                        <td>15mg</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+
+                    <!-- Produto 2 -->
+                    <details class="accordion">
+                        <summary>Picolé Premium - Whey Protein</summary>
+                        <div class="nutri-content">
+                            <p class="nutri-info-extra">Porção de 70g (1 unidade) - Valor Energético e Nutrientes</p>
+                            <table class="nutri-table">
+                                <tbody>
+                                    <tr>
+                                        <th>Valor Energético</th>
+                                        <td>110 kcal = 462 kJ</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Carboidratos</th>
+                                        <td>8g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Proteínas</th>
+                                        <td>10g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Gorduras Totais</th>
+                                        <td>4,5g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Gorduras Saturadas</th>
+                                        <td>2,5g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Gorduras Trans</th>
+                                        <td>0g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Fibra Alimentar</th>
+                                        <td>1,5g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Sódio</th>
+                                        <td>35mg</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+
+                    <!-- Produto 3 -->
+                    <details class="accordion">
+                        <summary>Bolo de Pote Saudável</summary>
+                        <div class="nutri-content">
+                            <p class="nutri-info-extra">Porção de 150g (1 pote) - Valor Energético e Nutrientes</p>
+                            <table class="nutri-table">
+                                <tbody>
+                                    <tr>
+                                        <th>Valor Energético</th>
+                                        <td>195 kcal = 819 kJ</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Carboidratos</th>
+                                        <td>22g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Proteínas</th>
+                                        <td>8g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Gorduras Totais</th>
+                                        <td>8,5g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Gorduras Saturadas</th>
+                                        <td>3,0g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Gorduras Trans</th>
+                                        <td>0g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Fibra Alimentar</th>
+                                        <td>4,5g</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Sódio</th>
+                                        <td>65mg</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
         <section id="encomendas" class="encomendas-section section-verde">
             <div class="container">
                 <div class="encomendas-content">
@@ -725,6 +986,7 @@
         <div class="container">
             <div class="footer-nav">
                 <a href="#produtos">Produtos</a>
+                <a href="#tabela-nutricional">Inf. Nutricional</a>
                 <a href="#valores">Valores</a>
                 <a href="#" id="link-whatsapp-footer">WhatsApp</a>
             </div>
