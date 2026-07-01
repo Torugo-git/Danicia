@@ -714,6 +714,24 @@
             }
         }
 
+
+        @media (max-width: 767px) {
+            .nutri-table {
+                width: 100% !important;
+                min-width: 100% !important;
+                table-layout: auto;
+            }
+            .nutri-table th, .nutri-table td {
+                font-size: 0.70rem !important;
+                padding: 0.4rem 0.2rem !important;
+                word-wrap: normal;
+                white-space: normal;
+            }
+            .nutri-table th {
+                width: auto !important;
+            }
+        }
+
         @media (max-width: 480px) {
             .valores-grid {
                 grid-template-columns: 1fr;
@@ -922,7 +940,7 @@
                             <p class="nutri-info-extra">Porção: 150 g (1 unidade)</p>
                             
                             <div style="overflow-x: auto;">
-                                <table class="nutri-table" style="min-width: 500px;">
+                                <table class="nutri-table" style="min-width: 100%;">
                                     <thead>
                                         <tr>
                                             <th style="text-align: left; width: 45%;">INFORMAÇÃO NUTRICIONAL</th>
@@ -1030,7 +1048,7 @@
                             <p class="nutri-info-extra">Porção: 150 g (1 pote)</p>
                             
                             <div style="overflow-x: auto;">
-                                <table class="nutri-table" style="min-width: 500px;">
+                                <table class="nutri-table" style="min-width: 100%;">
                                     <thead>
                                         <tr>
                                             <th style="text-align: left; width: 45%;">INFORMAÇÃO NUTRICIONAL</th>
@@ -1122,7 +1140,7 @@
                             <p class="nutri-info-extra">Porção: 150 g (1 pote)</p>
                             
                             <div style="overflow-x: auto;">
-                                <table class="nutri-table" style="min-width: 500px;">
+                                <table class="nutri-table" style="min-width: 100%;">
                                     <thead>
                                         <tr>
                                             <th style="text-align: left; width: 45%;">INFORMAÇÃO NUTRICIONAL</th>
@@ -1213,7 +1231,7 @@
                         <div class="nutri-content">
                             <p class="nutri-info-extra">Porção de 70g (1 unidade) - Valor Energético e Nutrientes</p>
                             <div style="overflow-x: auto;">
-                                <table class="nutri-table" style="min-width: 400px;">
+                                <table class="nutri-table" style="min-width: 100%;">
                                     <thead>
                                         <tr>
                                             <th style="text-align: left; width: 50%;">INFORMAÇÃO NUTRICIONAL</th>
@@ -1274,7 +1292,7 @@
                         <div class="nutri-content">
                             <p class="nutri-info-extra">Porção de 150g (1 pote) - Valor Energético e Nutrientes</p>
                             <div style="overflow-x: auto;">
-                                <table class="nutri-table" style="min-width: 400px;">
+                                <table class="nutri-table" style="min-width: 100%;">
                                     <thead>
                                         <tr>
                                             <th style="text-align: left; width: 50%;">INFORMAÇÃO NUTRICIONAL</th>
