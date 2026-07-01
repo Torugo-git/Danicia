@@ -112,6 +112,9 @@ header {
 
 .logo-img {
     max-height: 85px; 
+    background-color: #FFFFFF; /* Devolve o branco apenas atrás da imagem */
+    border-radius: 50%; /* Força o fundo branco a ficar com o formato oval exato */
+    padding: 2px; /* Garante que o fundo cubra até a bordinha acobreada */
     filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.4));
     transition: var(--transition);
 }
