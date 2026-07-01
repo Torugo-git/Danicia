@@ -915,55 +915,17 @@ footer {
     }
 
     /* Tabela Nutricional Mobile */
-    .nutri-table,
-    .nutri-table thead,
-    .nutri-table tbody,
-    .nutri-table th,
-    .nutri-table td,
-    .nutri-table tr {
-        display: block;
-        width: 100% !important;
+    .nutri-table {
+        font-size: 0.75rem;
+        width: 100%;
     }
 
-    .nutri-table thead {
-        display: none;
-    }
-
-    .nutri-table tr {
-        border-bottom: 2px solid #eaeaea;
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    .nutri-table td {
-        text-align: right !important;
-        padding-left: 50%;
-        position: relative;
-        border: none;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-    }
-
-    .nutri-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 45%;
-        padding-right: 15px;
+    .nutri-table th, .nutri-table td {
+        padding: 0.4rem 0.2rem;
         white-space: nowrap;
-        text-align: left;
-        font-weight: 700;
-        color: var(--verde-borelli);
     }
 
-    .nutri-table td:first-child {
-        text-align: center !important;
-        padding-left: 0;
-        font-weight: 700;
-        font-size: 1.1rem;
-        color: var(--verde-borelli);
-        background-color: rgba(92, 100, 71, 0.05);
-        border-radius: 4px;
-        margin-bottom: 0.5rem;
+    .nutri-table th:first-child, .nutri-table td:first-child {
+        white-space: normal;
     }
 }
