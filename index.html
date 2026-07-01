@@ -20,7 +20,16 @@
             <div class="logo-container">
                 <img src="logo.jpg" alt="Danícia" class="logo-img">
             </div>
-            <nav>
+
+            <!-- Botão Hamburger (Mobile) -->
+            <button class="hamburger-btn" aria-label="Abrir menu" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Menu Desktop -->
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="#historia">História</a></li>
                     <li><a href="#produtos">Produtos</a></li>
@@ -30,6 +39,22 @@
             </nav>
         </div>
     </header>
+
+    <!-- Menu Mobile Drawer -->
+    <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <div class="drawer-header">
+            <img src="logo.jpg" alt="Danícia" class="drawer-logo">
+            <button class="close-btn" aria-label="Fechar menu" id="close-btn">&times;</button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#historia" class="mobile-nav-link">História</a></li>
+                <li><a href="#produtos" class="mobile-nav-link">Produtos</a></li>
+                <li><a href="#mantras" class="mobile-nav-link">Valores</a></li>
+                <li><a href="#tabela-nutricional" class="mobile-nav-link">Informação Nutricional</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <main>
         
@@ -519,6 +544,28 @@
     <!-- SCRIPTS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Lógica do Menu Mobile
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const closeBtn = document.getElementById('close-btn');
+            const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            function toggleMenu() {
+                mobileMenuDrawer.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            }
+
+            hamburgerBtn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuDrawer.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                });
+            });
+
+            // Lógica do WhatsApp
             const numeroWhatsApp = '5522999999999'; 
 
             const botoesPedir = document.querySelectorAll('.btn-pedir');
