@@ -3,914 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danícia - Prazer que faz bem | Doces Saudáveis</title>
+    <title>Danícia - Prazer que faz bem | Gelato Saudável</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-
-    <style>
-        /* ==========================================================================
-           Variáveis de Cores (Paleta Oficial Intercalada)
-           ========================================================================== */
-        :root {
-            --bg-bege: #F4EFEA;          /* Fundo Bege Claro Natural */
-            --verde-oliva: #6B7051;      /* Fundo Verde Escuro Premium */
-            --terracota: #B37063;        /* Tom do logo 'D' e Destaques Primários */
-            --text-marrom: #3E3633;      /* Texto principal para fundos claros */
-            --text-claro: #F4EFEA;       /* Texto principal para fundos verdes */
-            --kraft-bg: #EAE0D5;         /* Fundo Kraft para os Cards */
-            
-            --font-serif: 'Playfair Display', serif;
-            --font-sans: 'Montserrat', sans-serif;
-            
-            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        /* ==========================================================================
-           Reset Estrutural e Prevenção de Quebras
-           ========================================================================== */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background-color: var(--bg-bege);
-            color: var(--text-marrom);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            width: 100%;
-        }
-
-        h1, h2, h3, .serif {
-            font-family: var(--font-serif);
-            font-weight: 400;
-            line-height: 1.3;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* ==========================================================================
-           Classes de Intercalação Sólida de Blocos de Cores
-           ========================================================================== */
-        .section-bege {
-            background-color: var(--bg-bege);
-            color: var(--text-marrom);
-        }
-
-        .section-verde {
-            background-color: var(--verde-oliva);
-            color: var(--text-claro);
-        }
-
-        .section-kraft {
-            background-color: var(--kraft-bg);
-            color: var(--text-marrom);
-        }
-
-        /* ==========================================================================
-           Cabeçalho (Header) - Fundo Bege
-           ========================================================================== */
-        header {
-            background-color: var(--bg-bege);
-            padding: 3rem 1rem 2rem 1rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-bottom: 1px solid rgba(107, 112, 81, 0.1);
-        }
-
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .logo-img {
-            width: 100%;
-            max-width: 420px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            list-style: none;
-        }
-
-        nav a {
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-marrom);
-            transition: var(--transition);
-            padding-bottom: 4px;
-        }
-
-        nav a:hover {
-            color: var(--terracota);
-        }
-
-        /* ==========================================================================
-           Seção Herói (Hero) - Fundo Bege
-           ========================================================================== */
-        .hero-section {
-            padding: 7rem 0;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-section h1 {
-            font-size: 3.4rem;
-            color: var(--text-marrom);
-            margin-bottom: 1.8rem;
-        }
-
-        .hero-section p {
-            font-size: 1.2rem;
-            color: var(--text-marrom);
-            max-width: 650px;
-            margin: 0 auto 3.5rem auto;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-
-        /* Botão de Destaque Terracota */
-        .btn-terracota {
-            display: inline-block;
-            padding: 1.1rem 3.2rem;
-            background-color: var(--terracota);
-            color: #ffffff;
-            font-family: var(--font-sans);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: none;
-            border-radius: 40px;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(179, 112, 99, 0.2);
-        }
-
-        .btn-terracota:hover {
-            background-color: #9A5D52;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(179, 112, 99, 0.35);
-        }
-
-        /* ==========================================================================
-           Seção de Valores - INTERCALADO: Fundo Verde Escuro
-           ========================================================================== */
-        .valores-section {
-            padding: 6rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .valores-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2.5rem;
-            margin-bottom: 5rem;
-        }
-
-        .valor-item {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 3rem 1.5rem;
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
-        }
-
-        .valor-item:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
-
-        .valor-item svg {
-            width: 44px;
-            height: 44px;
-            margin: 0 auto 1.5rem auto;
-            fill: none;
-            stroke: var(--text-claro);
-            stroke-width: 1.2;
-            display: block;
-        }
-
-        .valor-item h3 {
-            font-size: 1.2rem;
-            color: var(--text-claro);
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-        }
-
-        .diferenciais-banner {
-            text-align: center;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .diferenciais-banner p {
-            font-family: var(--font-serif);
-            font-size: 1.4rem;
-            color: var(--bg-bege);
-            font-style: italic;
-            letter-spacing: 1px;
-        }
-
-        /* ==========================================================================
-           Seção de Produtos - INTERCALADO: Fundo Bege Claro
-           ========================================================================== */
-        .produtos-section {
-            padding: 7rem 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            color: var(--text-marrom);
-            margin-bottom: 0.6rem;
-        }
-
-        .section-subtitle {
-            font-size: 0.85rem;
-            color: var(--verde-oliva);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: 600;
-        }
-
-        /* Novas Classes para Divisão por Linhas */
-        .linha-categoria {
-            margin-bottom: 5rem;
-        }
-
-        .linha-categoria:last-child {
-            margin-bottom: 0;
-        }
-
-        .categoria-title-wrapper {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .categoria-title {
-            display: inline-block;
-            font-family: var(--font-serif);
-            font-size: 2.2rem;
-            color: var(--terracota);
-            background-color: var(--bg-bege);
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-            font-style: italic;
-        }
-
-        .categoria-title-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background-color: rgba(179, 112, 99, 0.3);
-            z-index: 1;
-        }
-
-        .produtos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .product-card {
-            background-color: #ffffff;
-            border: 1px solid rgba(107, 112, 81, 0.12);
-            border-radius: 20px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition);
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(62, 54, 51, 0.08);
-            border-color: var(--terracota);
-        }
-
-        .product-image-container {
-            height: 280px;
-            background-color: var(--kraft-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        /* Simulação do rótulo clean e elegante no card */
-        .label-badge-mock {
-            background: #F4EFEA;
-            padding: 1.5rem;
-            border-radius: 50%;
-            width: 95px;
-            height: 95px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(179, 112, 99, 0.25);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-        }
-
-        .label-badge-mock span {
-            font-family: var(--font-serif);
-            color: var(--terracota);
-            font-size: 2rem;
-            line-height: 1;
-            font-style: italic;
-        }
-
-        .label-badge-mock small {
-            font-size: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--verde-oliva);
-            margin-top: 3px;
-        }
-
-        .product-info {
-            padding: 2.5rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .product-info h3 {
-            font-size: 1.5rem;
-            color: var(--text-marrom);
-            margin-bottom: 0.5rem;
-        }
-
-        .product-benefits {
-            font-size: 0.75rem;
-            color: var(--verde-oliva);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .product-description {
-            font-size: 0.95rem;
-            color: var(--text-marrom);
-            opacity: 0.8;
-            margin-bottom: 2.5rem;
-            flex-grow: 1;
-            font-weight: 300;
-        }
-
-        /* Botão Verde Oliva Elegante para Ação Secundária */
-        .btn-verde-outline {
-            display: inline-block;
-            width: 100%;
-            padding: 1rem 2rem;
-            background-color: transparent;
-            color: var(--verde-oliva);
-            border: 1.5px solid var(--verde-oliva);
-            border-radius: 30px;
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .btn-verde-outline:hover {
-            background-color: var(--verde-oliva);
-            color: #ffffff;
-            box-shadow: 0 6px 15px rgba(107, 112, 81, 0.2);
-        }
-
-        /* ==========================================================================
-           NOVA SEÇÃO: Tabela Nutricional (Acordeão) - INTERCALADO: Fundo Kraft
-           ========================================================================== */
-        .nutricional-section {
-            padding: 7rem 0;
-            border-top: 1px solid rgba(107, 112, 81, 0.1);
-        }
-
-        .accordion-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        details.accordion {
-            background: #ffffff;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(107, 112, 81, 0.15);
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        details.accordion:hover {
-            box-shadow: 0 4px 15px rgba(62, 54, 51, 0.05);
-        }
-
-        details.accordion summary {
-            padding: 1.5rem 2rem;
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--text-marrom);
-            list-style: none; /* Remove seta padrão */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-        }
-
-        details.accordion summary::-webkit-details-marker {
-            display: none;
-        }
-
-        details.accordion summary::after {
-            content: '+';
-            font-size: 1.5rem;
-            color: var(--terracota);
-            font-weight: 400;
-            transition: var(--transition);
-        }
-
-        details.accordion[open] summary::after {
-            content: '−';
-        }
-
-        details.accordion[open] summary {
-            border-bottom: 1px solid rgba(107, 112, 81, 0.1);
-            background-color: var(--bg-bege);
-        }
-
-        .nutri-content {
-            padding: 2rem;
-            background: #fff;
-        }
-
-        .nutri-info-extra {
-            font-size: 0.85rem;
-            color: var(--verde-oliva);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-
-        .nutri-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-            color: var(--text-marrom);
-        }
-
-        .nutri-table th, .nutri-table td {
-            border-bottom: 1px solid #eaeaea;
-            padding: 0.8rem 0;
-            text-align: left;
-        }
-
-        .nutri-table th {
-            font-weight: 600;
-            color: var(--text-marrom);
-            width: 70%;
-        }
-
-        .nutri-table td {
-            text-align: right;
-            font-weight: 400;
-        }
-
-        .nutri-table tr:last-child th,
-        .nutri-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* ==========================================================================
-           Seção Encomendas - INTERCALADO: Fundo Verde Escuro
-           ========================================================================== */
-        .encomendas-section {
-            padding: 7rem 0;
-            text-align: center;
-        }
-
-        .encomendas-content {
-            max-width: 750px;
-            margin: 0 auto;
-        }
-
-        .encomendas-content h2 {
-            font-size: 2.8rem;
-            color: var(--text-claro);
-            margin-bottom: 1.8rem;
-        }
-
-        .encomendas-content p {
-            font-size: 1.15rem;
-            color: var(--text-claro);
-            margin-bottom: 3rem;
-            font-weight: 300;
-            opacity: 0.95;
-        }
-
-        .entrega-badge {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.08);
-            padding: 1.1rem 2.5rem;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            margin-bottom: 3.5rem;
-        }
-
-        .entrega-badge p {
-            margin: 0;
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--text-claro);
-            letter-spacing: 0.5px;
-        }
-
-        /* Botão de WhatsApp em Fundo Verde: Base Creme com Texto Verde */
-        .btn-creme-solid {
-            display: inline-block;
-            padding: 1.1rem 3.5rem;
-            background-color: var(--bg-bege);
-            color: var(--verde-oliva);
-            font-family: var(--font-sans);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: none;
-            border-radius: 40px;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-creme-solid:hover {
-            background-color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* ==========================================================================
-           Rodapé (Footer) - Fundo Bege
-           ========================================================================== */
-        footer {
-            background-color: var(--bg-bege);
-            padding: 4rem 1rem;
-            text-align: center;
-            border-top: 1px solid rgba(107, 112, 81, 0.15);
-        }
-
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-nav a {
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-marrom);
-            transition: var(--transition);
-        }
-
-        .footer-nav a:hover {
-            color: var(--terracota);
-        }
-
-        .footer-logo-text {
-            font-family: var(--font-serif);
-            font-size: 1.4rem;
-            color: var(--terracota);
-            font-style: italic;
-            letter-spacing: 0.5px;
-        }
-
-        /* ==========================================================================
-           Media Queries (Responsividade sem Quebras)
-           ========================================================================== */
-        @media (max-width: 992px) {
-            .valores-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 2.5rem 1rem;
-            }
-            
-            .logo-img {
-                max-width: 260px;
-            }
-
-            nav ul {
-                gap: 1.8rem;
-                flex-wrap: wrap;
-            }
-
-            .hero-section {
-                padding: 5rem 0;
-            }
-
-            .hero-section h1 {
-                font-size: 2.4rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .categoria-title {
-                font-size: 1.8rem;
-                padding: 0 1.2rem;
-            }
-
-            .produtos-grid {
-                grid-template-columns: 1fr;
-                max-width: 380px;
-                margin: 0 auto;
-            }
-
-            .encomendas-section {
-                padding: 5rem 0;
-            }
-
-            .encomendas-content h2 {
-                font-size: 2.2rem;
-            }
-
-            .entrega-badge {
-                padding: 0.9rem 1.8rem;
-                border-radius: 20px;
-            }
-
-            .footer-nav {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            details.accordion summary {
-                padding: 1.2rem 1.5rem;
-                font-size: 0.95rem;
-            }
-            
-            .nutri-content {
-                padding: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .valores-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Schoolbell&display=swap" rel="stylesheet">
+    
+    <!-- Link para o seu arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- CABEÇALHO -->
     <header>
-        <div class="logo-container">
-            <img src="logo.jpg" alt="Danícia - Prazer que faz bem" class="logo-img">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Danícia" class="logo-img">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#historia">História</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#mantras">Valores</a></li>
+                    <li><a href="#tabela-nutricional">Informação Nutricional</a></li>
+                </ul>
+            </nav>
         </div>
-        
-        <nav>
-            <ul>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#tabela-nutricional">Informação Nutricional</a></li>
-                <li><a href="#valores">Valores</a></li>
-                <li><a href="#encomendas">Encomendas</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
         
-        <section class="hero-section section-bege">
+        <!-- HERO SECTION -->
+        <section class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Mais que um sorvete, um ritual de bem-estar.</h1>
-                    <p>Ingredientes reais, equilíbrio de verdade e todo o prazer que você merece.</p>
-                    <a href="#produtos" class="btn-terracota">Conheça nosso Menu</a>
+                    <h1>Em cada colherada,<br>uma história de tradição saudável.</h1>
+                    <a href="#produtos" class="btn-dourado">Conheça os Sabores</a>
                 </div>
             </div>
         </section>
 
-        <section id="valores" class="valores-section section-verde">
-            <div class="container">
-                <div class="valores-grid">
-                    
-                    <div class="valor-item">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12" stroke-linecap="round"/>
-                            <path d="M19 5C14 5 10 9 9 14C8 19 12 21 12 21" stroke-linecap="round"/>
-                            <path d="M9 21C13 16 17 13 21 11" stroke-linecap="round"/>
-                        </svg>
-                        <h3>Ingredientes Selecionados</h3>
-                    </div>
-
-                    <div class="valor-item">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M3 11.5C3 16.5 7 20.5 12 20.5C17 20.5 21 16.5 21 11.5H3Z" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M19 7L13 11.5" stroke-linecap="round"/>
-                            <path d="M15 4H21V6H15V4Z"/>
-                        </svg>
-                        <h3>Receitas Equilibradas</h3>
-                    </div>
-
-                    <div class="valor-item">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke-linecap="round"/>
-                        </svg>
-                        <h3>Prazer sem excessos</h3>
-                    </div>
-
-                    <div class="valor-item">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M14 11V5a2 2 0 0 0-4 0v6M10 11V3a2 2 0 0 0-4 0v8M6 11V6a2 2 0 0 0-4 0v9a7 7 0 0 0 7 7h3a7 7 0 0 0 7-7v-4" stroke-linecap="round"/>
-                        </svg>
-                        <h3>Feito com intenção</h3>
-                    </div>
-
-                </div>
-
-                <div class="diferenciais-banner">
-                    <p>100% Naturais • Zero Açúcar • Zero Lactose • Sem Glúten • Opções Proteicas</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="produtos" class="produtos-section section-bege">
+        <!-- PRODUTOS -->
+        <section id="produtos" class="produtos-section">
             <div class="container">
                 
                 <div class="section-header">
-                    <h2 class="section-title">Nosso Cardápio</h2>
-                    <p class="section-subtitle">Doces que fazem bem</p>
+                    <h2>Conheça nossos produtos <br>
+                        <div class="loader-text">
+                            <div class="words-wrapper">
+                                <span class="word-item">artesanais</span>
+                                <span class="word-item">saudáveis</span>
+                                <span class="word-item">proteicos</span>
+                                <span class="word-item">sem açúcar</span>
+                                <span class="word-item">sem lactose</span>
+                                <span class="word-item">artesanais</span> 
+                            </div>
+                        </div>
+                    </h2>
                 </div>
 
-                <!-- LINHA PROTEICA -->
+                <!-- LINHA PROTEICA (CARD EXPANSIVO) -->
                 <div class="linha-categoria">
-                    <div class="categoria-title-wrapper">
-                        <h3 class="categoria-title">Linha Proteica</h3>
-                    </div>
-                    
-                    <div class="produtos-grid">
-                        <div class="product-card">
-                            <div class="product-image-container">
-                                <div class="label-badge-mock">
-                                    <span>D</span>
-                                    <small>Danícia</small>
-                                </div>
-                            </div>
-                            <div class="product-info">
+                    <div class="containerCards">
+                        
+                        <div class="card-expand" style="background-image: url('foto-avelate.jpg');">
+                            <div class="card-expand-overlay">
                                 <h3>Gelato Avelate</h3>
-                                <span class="product-benefits">Avelã e Cacau Alcalino</span>
-                                <p class="product-description">Textura extremamente cremosa com sabor intenso de avelã e cacau 100% alcalino. Rico em proteínas e fibras, zero açúcar e zero lactose.</p>
-                                <button class="btn-verde-outline btn-pedir" data-produto="Gelato Avelate">Pedir agora</button>
+                                <p>Textura cremosa com sabor intenso de avelã e cacau 100% alcalino. Rico em proteínas e fibras.</p>
+                                <button class="btn-pedir-outline btn-pedir" data-produto="Gelato Avelate">Pedir Agora</button>
                             </div>
                         </div>
 
-                        <div class="product-card">
-                            <div class="product-image-container">
-                                <div class="label-badge-mock">
-                                    <span>D</span>
-                                    <small>Danícia</small>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>Gelato Dan Vanilla</h3>
-                                <span class="product-benefits">Baunilha • Whey Protein</span>
-                                <p class="product-description">O verdadeiro sabor da baunilha em um gelato extremamente cremoso, enriquecido com whey protein e colágeno. Totalmente zero açúcar e lactose.</p>
-                                <button class="btn-verde-outline btn-pedir" data-produto="Gelato Dan Vanilla">Pedir agora</button>
+                        <div class="card-expand" style="background-image: url('foto-vanilla.jpg');">
+                            <div class="card-expand-overlay">
+                                <h3>Dan Vanilla</h3>
+                                <p>Sabor da baunilha em um gelato cremoso, enriquecido com whey protein e colágeno.</p>
+                                <button class="btn-pedir-outline btn-pedir" data-produto="Gelato Dan Vanilla">Pedir Agora</button>
                             </div>
                         </div>
 
-                        <div class="product-card">
-                            <div class="product-image-container">
-                                <div class="label-badge-mock">
-                                    <span>D</span>
-                                    <small>Danícia</small>
-                                </div>
-                            </div>
-                            <div class="product-info">
+                        <div class="card-expand" style="background-image: url('foto-moratto.jpg');">
+                            <div class="card-expand-overlay">
                                 <h3>Gelato Moratto</h3>
-                                <span class="product-benefits">Morangos Reais • Whey Protein</span>
-                                <p class="product-description">Gelato proteico e refrescante elaborado com morangos reais e maçã. Alta concentração de fibras e proteínas para um prazer equilibrado.</p>
-                                <button class="btn-verde-outline btn-pedir" data-produto="Gelato Moratto">Pedir agora</button>
+                                <p>Refrescante elaborado com morangos reais. Alta concentração de fibras e proteínas.</p>
+                                <button class="btn-pedir-outline btn-pedir" data-produto="Gelato Moratto">Pedir Agora</button>
                             </div>
                         </div>
 
-                        <div class="product-card">
-                            <div class="product-image-container">
-                                <div class="label-badge-mock">
-                                    <span>D</span>
-                                    <small>Danícia</small>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>Picolé Premium</h3>
-                                <span class="product-benefits">Whey Protein • Casca Crocante</span>
-                                <p class="product-description">A união perfeita de um recheio proteico cremoso com uma cobertura crocante de chocolate saudável. O verdadeiro padrão premium.</p>
-                                <button class="btn-verde-outline btn-pedir" data-produto="Picolé Premium">Pedir agora</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- LINHA CLÁSSICA -->
-                <div class="linha-categoria">
-                    <div class="categoria-title-wrapper">
-                        <h3 class="categoria-title">Linha Clássica</h3>
-                    </div>
-                    
-                    <div class="produtos-grid">
-                        <div class="product-card">
-                            <div class="product-image-container">
-                                <div class="label-badge-mock">
-                                    <span>D</span>
-                                    <small>Danícia</small>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3>Bolo de Pote Saudável</h3>
-                                <span class="product-benefits">100% Natural • Sem Glúten</span>
-                                <p class="product-description">Camadas deliciosas e equilibradas de massa macia e recheio leve. Totalmente livre de trigo, cevada ou centeio.</p>
-                                <button class="btn-verde-outline btn-pedir" data-produto="Bolo de Pote Saudável">Pedir agora</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- NOVA SEÇÃO: TABELA NUTRICIONAL (Alvo do QR Code) -->
-        <section id="tabela-nutricional" class="nutricional-section section-kraft">
+        <!-- PILARES DA MARCA (ENGENHARIA BORELLI 5 ITENS) -->
+        <div class="feature-one-wrapper" id="mantras">
+            <section class="feature-one">
+                <div class="feature-one__bg"></div>
+                <div class="container">
+                    <div class="feature-row gutter-y-30">
+                        <h4 class="video-one__title">5 Pilares Danícia</h4>
+
+                        <!-- Item 1 -->
+                        <div class="feature-col-xl-4">
+                            <div class="feature-one__item">
+                                <h3 class="feature-one__item__title">1. Ingredientes Selecionados</h3>
+                                <p class="feature-one__item__text">
+                                    <span>O melhor da natureza</span>
+                                    Buscamos proporcionar uma jornada completa para os sentidos, utilizando ingredientes reais e limpos. Uma experiência sem conservantes e totalmente fiel ao seu bem-estar.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="feature-col-xl-4">
+                            <div class="feature-one__item">
+                                <h3 class="feature-one__item__title">2. Receitas Equilibradas</h3>
+                                <p class="feature-one__item__text">
+                                    <span>Inovação com propósito</span>
+                                    Nossas fórmulas são desenhadas para garantir textura e cremosidade incomparáveis, unindo o melhor do whey protein, colágeno e fibras, sem adição de açúcares.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="feature-col-xl-4">
+                            <div class="feature-one__item">
+                                <h3 class="feature-one__item__title">3. Prazer sem Excessos</h3>
+                                <p class="feature-one__item__text">
+                                    <span>Liberdade em cada pote</span>
+                                    Sabemos que nossos clientes buscam mais do que um doce, buscam uma sobremesa segura. Por isso, entregamos o padrão premium com zero culpa.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Linha Interna para itens 4 e 5 (Centralizados) -->
+                        <div class="feature-row justify-content-md-center">
+                            <!-- Item 4 -->
+                            <div class="feature-col-xl-4 secondary-margin">
+                                <div class="feature-one__item">
+                                    <h3 class="feature-one__item__title">4. Qualidade Inigualável</h3>
+                                    <p class="feature-one__item__text">
+                                        <span>Uma colherada, um sorriso</span>
+                                        A qualidade é a pedra angular de nossa excelência. Cada detalhe, desde a seleção da matéria-prima até a entrega, é pensado para surpreender você.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Item 5 -->
+                            <div class="feature-col-xl-4 secondary-margin">
+                                <div class="feature-one__item">
+                                    <h3 class="feature-one__item__title">5. Produção Artesanal</h3>
+                                    <p class="feature-one__item__text">
+                                        <span>Feito com intenção</span>
+                                        Nossos lotes são produzidos diariamente e de forma cuidadosa. Cada pote reflete nossa paixão por entregar saúde, qualidade e sabor inigualável.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- VÍDEO BANNER -->
+        <section class="video-section">
+            <div class="container">
+                <div class="video-container">
+                    <div class="video-text">
+                        <h2>É saudável,<br>é artesanal,<br><span class="destaque-dourado">é Danícia!</span></h2>
+                    </div>
+                    <div class="video-iframe">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Vídeo Danícia" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HISTÓRIA DA MARCA -->
+        <section id="historia" class="historia-section">
+            <div class="container">
+                <div class="historia-container">
+                    <div class="historia-img-wrapper">
+                        <img src="foto-historia.jpg" alt="História Danícia" class="historia-img">
+                    </div>
+                    <div class="historia-text">
+                        <h2>História da Marca</h2>
+                        <p>Nosso sucesso é fruto de um cuidadoso processo focado na saúde e no bem-estar, sem nunca abrir mão do prazer. Nossas receitas são elaboradas para quem busca alta performance e equilíbrio no dia a dia, preservando o sabor autêntico de uma verdadeira sobremesa.</p>
+                        <p>Cada gelato é preparado com as melhores matérias-primas: whey protein isolado, cacau 100% alcalino, avelãs reais e frutas selecionadas. O processo artesanal garante uma experiência incomparável em sabor, textura e cremosidade.</p>
+                        <a href="#produtos" class="btn-dourado">Ver Cardápio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABELA NUTRICIONAL PADRÃO ANVISA -->
+        <section id="tabela-nutricional" class="nutricional-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Tabela Nutricional</h2>
-                    <p class="section-subtitle">Transparência em cada detalhe</p>
+                    <h2>Tabela Nutricional</h2>
+                    <span class="subtitulo fonte-detalhe">Transparência em cada detalhe</span>
                 </div>
 
                 <div class="accordion-container">
@@ -1002,22 +295,14 @@
                                 </table>
                             </div>
                             
-                            <p style="font-size: 0.75rem; color: var(--verde-oliva); margin-top: 10px; font-style: italic;">*Percentual de valores diários fornecidos pela porção.</p>
+                            <p style="font-size: 0.75rem; color: var(--verde-borelli); margin-top: 10px; font-style: italic;">*Percentual de valores diários fornecidos pela porção.</p>
                             
-                            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(107, 112, 81, 0.1);">
-                                <p style="font-size: 0.85rem; color: var(--text-marrom); line-height: 1.6; margin-bottom: 1rem;">
-                                    <strong style="color: var(--verde-oliva);">INGREDIENTES:</strong> Água, avelã, leite em pó zero lactose, polidextrose, isomalto-oligossacarídeo (IMO), proteína concentrada do soro do leite (whey protein), cacau em pó 100% alcalino, colágeno hidrolisado, óleo de abacate, estabilizante Cremobene, edulcorante natural glicosídeos de esteviol (stevia).
+                            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.1);">
+                                <p style="font-size: 0.85rem; color: var(--text-escuro); line-height: 1.6; margin-bottom: 1rem;">
+                                    <strong style="color: var(--verde-borelli);">INGREDIENTES:</strong> Água, avelã, leite em pó zero lactose, polidextrose, isomalto-oligossacarídeo (IMO), proteína concentrada do soro do leite (whey protein), cacau em pó 100% alcalino, colágeno hidrolisado, óleo de abacate, estabilizante Cremobene, edulcorante natural glicosídeos de esteviol (stevia).
                                 </p>
-                                <p style="font-size: 0.85rem; color: var(--text-marrom); line-height: 1.6; margin-bottom: 1rem;">
-                                    <strong style="color: var(--terracota);">ALÉRGICOS:</strong> CONTÉM LEITE E AVELÃ. NÃO CONTÉM GLÚTEN. NÃO CONTÉM LACTOSE.
-                                </p>
-                                <div style="display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.8rem; font-weight: 600; color: var(--verde-oliva); margin-top: 1.5rem;">
-                                    <span>🌱 FONTE DE PROTEÍNAS</span>
-                                    <span>🌱 FONTE DE FIBRAS</span>
-                                    <span>🌱 SEM LACTOSE**</span>
-                                </div>
-                                <p style="font-size: 0.7rem; color: var(--text-marrom); opacity: 0.7; margin-top: 0.8rem;">
-                                    **Como todo produto zero lactose.
+                                <p style="font-size: 0.85rem; color: var(--text-escuro); line-height: 1.6; margin-bottom: 1rem;">
+                                    <strong style="color: var(--dourado);">ALÉRGICOS:</strong> CONTÉM LEITE E AVELÃ. NÃO CONTÉM GLÚTEN. NÃO CONTÉM LACTOSE.
                                 </p>
                             </div>
                         </div>
@@ -1042,8 +327,8 @@
                                     <tbody>
                                         <tr>
                                             <td style="text-align: left; font-weight: 500;">Valor energético</td>
-                                            <td style="text-align: center;">102 kcal (428 kJ)</td>
-                                            <td style="text-align: center;">153 kcal (642 kJ)</td>
+                                            <td style="text-align: center;">102 kcal</td>
+                                            <td style="text-align: center;">153 kcal</td>
                                             <td style="text-align: center;">8%</td>
                                         </tr>
                                         <tr>
@@ -1104,12 +389,12 @@
                                 </table>
                             </div>
                             
-                            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(107, 112, 81, 0.1);">
-                                <p style="font-size: 0.85rem; color: var(--text-marrom); line-height: 1.6; margin-bottom: 1rem;">
-                                    <strong style="color: var(--verde-oliva);">INGREDIENTES:</strong> Água, leite em pó zero lactose, polidextrose (fibra alimentar), IMO (isomalto-oligossacarídeo), gema de ovo, whey protein concentrado, colágeno hidrolisado, óleo de abacate, estabilizante Cremobene, extrato de baunilha, edulcorante natural glicosídeos de esteviol (stevia).
+                            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.1);">
+                                <p style="font-size: 0.85rem; color: var(--text-escuro); line-height: 1.6; margin-bottom: 1rem;">
+                                    <strong style="color: var(--verde-borelli);">INGREDIENTES:</strong> Água, leite em pó zero lactose, polidextrose (fibra alimentar), IMO (isomalto-oligossacarídeo), gema de ovo, whey protein concentrado, colágeno hidrolisado, óleo de abacate, estabilizante Cremobene, extrato de baunilha, edulcorante natural glicosídeos de esteviol (stevia).
                                 </p>
-                                <p style="font-size: 0.85rem; color: var(--text-marrom); line-height: 1.6; margin-bottom: 1rem;">
-                                    <strong style="color: var(--terracota);">ALÉRGICOS:</strong> CONTÉM OVO, LEITE E DERIVADOS. PODE CONTER SOJA. NÃO CONTÉM GLÚTEN. NÃO CONTÉM LACTOSE.
+                                <p style="font-size: 0.85rem; color: var(--text-escuro); line-height: 1.6; margin-bottom: 1rem;">
+                                    <strong style="color: var(--dourado);">ALÉRGICOS:</strong> CONTÉM OVO, LEITE E DERIVADOS. PODE CONTER SOJA. NÃO CONTÉM GLÚTEN. NÃO CONTÉM LACTOSE.
                                 </p>
                             </div>
                         </div>
@@ -1134,8 +419,8 @@
                                     <tbody>
                                         <tr>
                                             <td style="text-align: left; font-weight: 500;">Valor energético</td>
-                                            <td style="text-align: center;">159 kcal (667 kJ)</td>
-                                            <td style="text-align: center;">239 kcal (1000 kJ)</td>
+                                            <td style="text-align: center;">159 kcal</td>
+                                            <td style="text-align: center;">239 kcal</td>
                                             <td style="text-align: center;">12%</td>
                                         </tr>
                                         <tr>
@@ -1196,179 +481,46 @@
                                 </table>
                             </div>
                             
-                            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(107, 112, 81, 0.1);">
-                                <p style="font-size: 0.85rem; color: var(--text-marrom); line-height: 1.6; margin-bottom: 1rem;">
-                                    <strong style="color: var(--verde-oliva);">INGREDIENTES:</strong> Água, morangos congelados, maçã em pó, leite em pó zero lactose, polidextrose (fibra alimentar), IMO (isomalto-oligossacarídeo), whey protein concentrado, colágeno hidrolisado, óleo de abacate, estabilizante Cremobene, edulcorante natural glicosídeos de esteviol (stevia).
+                            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.1);">
+                                <p style="font-size: 0.85rem; color: var(--text-escuro); line-height: 1.6; margin-bottom: 1rem;">
+                                    <strong style="color: var(--verde-borelli);">INGREDIENTES:</strong> Água, morangos congelados, maçã em pó, leite em pó zero lactose, polidextrose (fibra alimentar), IMO (isomalto-oligossacarídeo), whey protein concentrado, colágeno hidrolisado, óleo de abacate, estabilizante Cremobene, edulcorante natural glicosídeos de esteviol (stevia).
                                 </p>
-                                <p style="font-size: 0.85rem; color: var(--text-marrom); line-height: 1.6; margin-bottom: 1rem;">
-                                    <strong style="color: var(--terracota);">ALÉRGICOS:</strong> CONTÉM LEITE E DERIVADOS. PODE CONTER SOJA. NÃO CONTÉM GLÚTEN. NÃO CONTÉM LACTOSE.
+                                <p style="font-size: 0.85rem; color: var(--text-escuro); line-height: 1.6; margin-bottom: 1rem;">
+                                    <strong style="color: var(--dourado);">ALÉRGICOS:</strong> CONTÉM LEITE E DERIVADOS. PODE CONTER SOJA. NÃO CONTÉM GLÚTEN. NÃO CONTÉM LACTOSE.
                                 </p>
                             </div>
                         </div>
                     </details>
 
-                    <!-- Produto 4 -->
-                    <details class="accordion">
-                        <summary>Picolé Premium - Whey Protein</summary>
-                        <div class="nutri-content">
-                            <p class="nutri-info-extra">Porção de 70g (1 unidade) - Valor Energético e Nutrientes</p>
-                            <div style="overflow-x: auto;">
-                                <table class="nutri-table" style="min-width: 400px;">
-                                    <thead>
-                                        <tr>
-                                            <th style="text-align: left; width: 50%;">INFORMAÇÃO NUTRICIONAL</th>
-                                            <th style="text-align: center; width: 25%;">100 g</th>
-                                            <th style="text-align: center; width: 25%;">70 g</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="text-align: left; font-weight: 500;">Valor Energético</td>
-                                            <td style="text-align: center;">157 kcal = 660 kJ</td>
-                                            <td style="text-align: center;">110 kcal = 462 kJ</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">Carboidratos</td>
-                                            <td style="text-align: center;">11,4 g</td>
-                                            <td style="text-align: center;">8 g</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">Proteínas</td>
-                                            <td style="text-align: center;">14,3 g</td>
-                                            <td style="text-align: center;">10 g</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">Gorduras Totais</td>
-                                            <td style="text-align: center;">6,4 g</td>
-                                            <td style="text-align: center;">4,5 g</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left; padding-left: 1.5rem; font-size: 0.9em;">Gorduras Saturadas</td>
-                                            <td style="text-align: center;">3,6 g</td>
-                                            <td style="text-align: center;">2,5 g</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left; padding-left: 1.5rem; font-size: 0.9em;">Gorduras <em>Trans</em></td>
-                                            <td style="text-align: center;">0 g</td>
-                                            <td style="text-align: center;">0 g</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">Fibra Alimentar</td>
-                                            <td style="text-align: center;">2,1 g</td>
-                                            <td style="text-align: center;">1,5 g</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">Sódio</td>
-                                            <td style="text-align: center;">50 mg</td>
-                                            <td style="text-align: center;">35 mg</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </details>
-
-                    <!-- Produto 5 -->
-                    <details class="accordion">
-                        <summary>Bolo de Pote Saudável</summary>
-                        <div class="nutri-content">
-                            <p class="nutri-info-extra">Porção de 150g (1 pote) - Valor Energético e Nutrientes</p>
-                            <div style="overflow-x: auto;">
-                                <table class="nutri-table" style="min-width: 400px;">
-                                    <thead>
-                                        <tr>
-                                            <th style="text-align: left; width: 50%;">INFORMAÇÃO NUTRICIONAL</th>
-                                            <th style="text-align: center; width: 25%;">100 g</th>
-                                            <th style="text-align: center; width: 25%;">150 g</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="text-align: left; font-weight: 500;">Valor Energético</td>
-                                            <td style="text-align: center;">130 kcal = 546 kJ</td>
-                                            <td style="text-align: center;">195 kcal = 819 kJ</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">Carboidratos</td>
-                                            <td style="text-align: center;">14,7 g</td>
-                                            <td style="text-align: center;">22 g</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">Proteínas</td>
-                                            <td style="text-align: center;">5,3 g</td>
-                                            <td style="text-align: center;">8 g</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">Gorduras Totais</td>
-                                            <td style="text-align: center;">5,7 g</td>
-                                            <td style="text-align: center;">8,5 g</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left; padding-left: 1.5rem; font-size: 0.9em;">Gorduras Saturadas</td>
-                                            <td style="text-align: center;">2,0 g</td>
-                                            <td style="text-align: center;">3,0 g</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left; padding-left: 1.5rem; font-size: 0.9em;">Gorduras <em>Trans</em></td>
-                                            <td style="text-align: center;">0 g</td>
-                                            <td style="text-align: center;">0 g</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">Fibra Alimentar</td>
-                                            <td style="text-align: center;">3,0 g</td>
-                                            <td style="text-align: center;">4,5 g</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">Sódio</td>
-                                            <td style="text-align: center;">43 mg</td>
-                                            <td style="text-align: center;">65 mg</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </details>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="encomendas" class="encomendas-section section-verde">
-            <div class="container">
-                <div class="encomendas-content">
-                    <h2>Produção Artesanal & Exclusiva</h2>
-                    <p>Nossos doces são preparados diariamente em pequenos lotes para garantir o máximo frescor e a perfeita integridade dos ingredientes. Um cuidado dedicado à sua saúde.</p>
-                    
-                    <div class="entrega-badge">
-                        <p>📍 Entregas sob encomenda na região de <strong>Extensão do Bosque, Rio das Ostras</strong> e proximidades.</p>
-                    </div>
-                    
-                    <br>
-                    <button class="btn-creme-solid" id="btn-encomenda-geral">Solicitar Cardápio via WhatsApp</button>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer>
+    <!-- RODAPÉ E ENCOMENDAS -->
+    <footer id="encomendas">
         <div class="container">
-            <div class="footer-nav">
-                <a href="#produtos">Produtos</a>
-                <a href="#tabela-nutricional">Inf. Nutricional</a>
-                <a href="#valores">Valores</a>
-                <a href="#" id="link-whatsapp-footer">WhatsApp</a>
+            <div class="entrega-badge">
+                <p>📍 Entregas sob encomenda na região de <strong>Extensão do Bosque, Rio das Ostras</strong> e proximidades.</p>
             </div>
+            
+            <div class="footer-nav">
+                <a href="#produtos">Menu</a>
+                <a href="#mantras">Valores</a>
+                <a href="#tabela-nutricional">Inf. Nutricional</a>
+                <a href="#" id="btn-encomenda-geral">Atendimento WhatsApp</a>
+            </div>
+            
             <p class="footer-logo-text">Danícia. Prazer que faz bem.</p>
         </div>
     </footer>
 
+    <!-- SCRIPTS -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Configuração do WhatsApp da marca
-            const numeroWhatsApp = '5522999999999';
+            const numeroWhatsApp = '5522999999999'; 
 
-            // 1. Mensagem direcionada para cliques em produtos específicos
             const botoesPedir = document.querySelectorAll('.btn-pedir');
             botoesPedir.forEach(botao => {
                 botao.addEventListener('click', (e) => {
@@ -1379,20 +531,11 @@
                 });
             });
 
-            // 2. Mensagem geral de contato e cardápio completo
             const btnGeral = document.getElementById('btn-encomenda-geral');
-            const linkFooter = document.getElementById('link-whatsapp-footer');
             const msgGeral = `Olá! Gostaria de conhecer o cardápio completo da Danícia e verificar as taxas de entrega para Rio das Ostras.`;
 
             if (btnGeral) {
                 btnGeral.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(msgGeral)}`, '_blank');
-                });
-            }
-
-            if (linkFooter) {
-                linkFooter.addEventListener('click', (e) => {
                     e.preventDefault();
                     window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(msgGeral)}`, '_blank');
                 });
