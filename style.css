@@ -690,54 +690,15 @@ body.menu-open::before {
 @media (max-width: 767px) {
     .feature-one {
         margin: 0 10px;
-        padding: 50px 0;
+        padding: 50px 20px;
         border-radius: 20px;
     }
     .video-one__title { font-size: 32px; }
-    .feature-col-xl-4 { flex: 0 0 100%; max-width: 100%; }
+    .feature-col-xl-4 { flex: 0 0 100%; max-width: 100%; padding-bottom: 20px; }
 }
 
 @media (max-width: 1299px) {
     .feature-one { margin-left: 15px; margin-right: 15px; }
-}
-
-/* ==========================================================================
-   Vídeo Tradição
-   ========================================================================== */
-.video-section {
-    padding: 6rem 0;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg-video.jpg') center/cover fixed;
-    color: var(--text-claro);
-}
-
-.video-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.video-text h2 {
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    line-height: 1.2;
-}
-
-.video-text .destaque-dourado {
-    color: var(--dourado);
-}
-
-.video-iframe {
-    width: 100%;
-    aspect-ratio: 16/9;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.video-iframe iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
 }
 
 /* ==========================================================================
@@ -912,7 +873,7 @@ footer {
    Media Queries (Gerais)
    ========================================================================== */
 @media (max-width: 991px) {
-    .historia-container, .video-container {
+    .historia-container {
         grid-template-columns: 1fr;
         text-align: center;
     }
@@ -926,6 +887,9 @@ footer {
 }
 
 @media (max-width: 767px) {
+    .container {
+        padding: 0 20px;
+    }
     .header-container {
         flex-direction: row;
         gap: 1.5rem;
@@ -948,5 +912,58 @@ footer {
     .card-expand:hover {
         flex: 1;
         height: 350px; 
+    }
+
+    /* Tabela Nutricional Mobile */
+    .nutri-table,
+    .nutri-table thead,
+    .nutri-table tbody,
+    .nutri-table th,
+    .nutri-table td,
+    .nutri-table tr {
+        display: block;
+        width: 100% !important;
+    }
+
+    .nutri-table thead {
+        display: none;
+    }
+
+    .nutri-table tr {
+        border-bottom: 2px solid #eaeaea;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .nutri-table td {
+        text-align: right !important;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .nutri-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-right: 15px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 700;
+        color: var(--verde-borelli);
+    }
+
+    .nutri-table td:first-child {
+        text-align: center !important;
+        padding-left: 0;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: var(--verde-borelli);
+        background-color: rgba(92, 100, 71, 0.05);
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
     }
 }
