@@ -123,10 +123,6 @@ header {
     transform: scale(1.05);
 }
 
-.logo-img:hover {
-    transform: scale(1.05);
-}
-
 .desktop-nav ul {
     display: flex;
     gap: 2.5rem;
@@ -601,6 +597,17 @@ body.menu-open::before {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px;
+}
+
+/* 
+  Correção para alinhamento dos pilares no mobile. 
+  Isso remove a margem negativa dobrada quando uma row 
+  está dentro da outra, resolvendo o problema da imagem. 
+*/
+.feature-row .feature-row {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
 }
 
 .gutter-y-30 {
